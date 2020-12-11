@@ -14,6 +14,8 @@ Deque::Deque() {
 /// 
 Deque::~Deque() {
 	// Fill this in
+	delete head;
+	delete tail;
 } //end-~Deque
 
 ///------------------------------------------------------
@@ -35,8 +37,8 @@ void Deque::AddFront(int item) {
 		else
 		{
 			newNode->next = head;
-			tail->prev = newNode;
-			tail = newNode;
+			head->prev = newNode;
+			head = newNode;
 		}
 		this->noOfItems++;
 	}
@@ -60,8 +62,8 @@ void Deque::AddRear(int item) {
 		// Inserts node at the rear end 
 		else
 		{
-			newNode->prev = tail;
 			tail->next = newNode;
+			newNode->prev = tail;
 			tail = newNode;
 		}
 		this->noOfItems++;
@@ -75,7 +77,33 @@ void Deque::AddRear(int item) {
 /// 
 int Deque::RemoveFront() {
 	// Fill this in
-	return 0;
+	if (this->IsEmpty())
+	{
+		throw "UnderFlow\n";
+	}
+	else
+	{
+		DequeNode* temp = head;
+		head = head->next;
+		int item;
+
+		// If only one element was present 
+		if (head == NULL) {
+			tail = NULL;
+			this->noOfItems--;
+			 item = temp->item;
+			delete(temp);
+			return item;
+		}
+		else
+			head->prev = NULL;
+
+		// Decrements count of elements by 1 
+		this->noOfItems--;
+		item =  temp->item;
+		delete(temp);
+		return item;
+	}
 } //end-RemoveFront
 
 ///------------------------------------------------------
@@ -84,7 +112,31 @@ int Deque::RemoveFront() {
 /// 
 int Deque::RemoveRear() {
 	// Fill this in
-	return 0;
+	if (this->IsEmpty())
+	{
+		throw "UnderFlow\n";
+	}
+	else
+	{
+		DequeNode* temp = tail;
+		tail = tail->prev;
+		int item;
+		// If only one element was present 
+		if (tail == NULL) {
+			head = NULL;
+			this->noOfItems--;
+			item = temp->item;
+			delete(temp);
+			return item;
+		}
+		else
+			tail->next = NULL;
+		// Decrements count of elements by 1 
+		this->noOfItems--;
+		item = temp->item;
+		delete(temp);
+		return item;
+	}
 } //end-RemoveRear
 
 ///------------------------------------------------------
