@@ -1,0 +1,2 @@
+D:\Data_Sturucture_Fall_2021\004_Lab_Assignment\Deque\x64\Debug\Lab04.exe
+D:\Data_Sturucture_Fall_2021\004_Lab_Assignment\Deque\x64\Debug\Lab04.pdb
