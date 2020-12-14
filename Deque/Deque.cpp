@@ -14,8 +14,11 @@ Deque::Deque() {
 /// 
 Deque::~Deque() {
 	// Fill this in
-	delete head;
-	delete tail;
+	while (this->head) {
+		DequeNode* node = this->head;
+		this->head = this->head->next;
+		delete node;
+	}
 } //end-~Deque
 
 ///------------------------------------------------------
