@@ -2,8 +2,9 @@
 /**
 * @authors		152120171056 - Yasemin Gerboğa(Veri Yapıları) && 152120171002 - Mustafa Batuhan Bayoğlu(Veri Yapıları)
 * @date			16 December 2020
-* @brief		This code was created to deque using double linked list.
+* @brief		This code was created to deque using doubly-linked list.
 */
+
 ///------------------------------------------------------
 /// Default constructor
 /// 
