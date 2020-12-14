@@ -98,9 +98,7 @@ int Deque::RemoveFront() {
 			delete(temp);
 			return item;
 		}
-		else
-			head->prev = NULL;
-
+		head->prev = NULL;
 		// Decrements count of elements by 1 
 		this->noOfItems--;
 		item =  temp->item;
@@ -132,8 +130,7 @@ int Deque::RemoveRear() {
 			delete(temp);
 			return item;
 		}
-		else
-			tail->next = NULL;
+		tail->next = NULL;
 		// Decrements count of elements by 1 
 		this->noOfItems--;
 		item = temp->item;
